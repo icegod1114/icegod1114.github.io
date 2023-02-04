@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>這是第一個數</p>
+        <input id="a" type="text"></input>
+        <br>
+        <p>這是第二個數</p>
+        <input id="b" type="text"/></input>
+        <br><br>
+        <button onclick="sum()">+</button>
+        <button onclick="minus()">-</button>
+        <button onclick="mutiple()">*</button>
+        <button onclick="divide()">/</button>
+        <br><br>
+        <output id="c"></output>
+        <script>
+            //函數
+            function sum(){
+                var a=parseInt(document.getElementById('a').value)
+                var b=parseInt(document.getElementById('b').value)
+                document.getElementById('c').value=a+b
+            }
+
+            function minus(){
+                var a=parseInt(document.getElementById('a').value)
+                var b=parseInt(document.getElementById('b').value)
+                document.getElementById('c').value=a-b
+            }
+
+            function mutiple(){
+                var a=parseInt(document.getElementById('a').value)
+                var b=parseInt(document.getElementById('b').value)
+                document.getElementById('c').value=a*b
+            }
+
+            function divide(){
+                var a=parseInt(document.getElementById('a').value)
+                var b=parseInt(document.getElementById('b').value)
+                document.getElementById('c').value=a/b
+            }
+        </script>
+    </body>
+</html>
