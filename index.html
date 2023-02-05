@@ -1,43 +1,337 @@
 <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Leying</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
 <html>
-    <body>
-        <p>這是第一個數</p>
-        <input id="a" type="text"></input>
-        <br>
-        <p>這是第二個數</p>
-        <input id="b" type="text"/></input>
-        <br><br>
-        <button onclick="sum()">+</button>
-        <button onclick="minus()">-</button>
-        <button onclick="mutiple()">*</button>
-        <button onclick="divide()">/</button>
-        <br><br>
-        <output id="c"></output>
-        <script>
-            //函數
-            function sum(){
-                var a=parseInt(document.getElementById('a').value)
-                var b=parseInt(document.getElementById('b').value)
-                document.getElementById('c').value=a+b
-            }
+  <head>
+    
+    <title>Leying Studio - Website</title>
+  </head>
+  <body>
+<!--  Navigation Bar    -->
+    <nav id="navigation" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+              <a class="navbar-brand" href="#">學習app推薦</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarButtons" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarButtons">          
+          <ul class="nav navbar-nav navbar-right">
+            <li id="navabout" class="btn navbar-btn">簡報</li>
+            <li id="navServices" class="btn navbar-btn">專注力</li>
+            <li id="navDay" class="btn navbar-btn">日曆</li>
+            <li id="navwrite" class="btn navbar-btn">筆記</li>
+            <li id="navread" class="btn navbar-btn">背單字</li>
+            <li id="navexpert" class="btn navbar-btn">資料處理</li>
+            <li id="navbooks" class="btn navbar-btn">閱讀</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--  Top page image    -->
+ <div class="parallaxTop">
+   <div class="jumboBanner shadow">
+     <h1 class="banner">學習app推薦</h1>
+     <h3 class="motto">製作簡報/ 專注力 / 日曆 / 閱讀</h3>
+     <h3 class="motto">製作筆記/ 背單字 / 資料處理</h3>
+     <button id="bannerBtn" class="bannerBtn">LEARN MORE</button>
+   </div>
+ </div>
+<!--  Main content   -->    
+<!--  簡報      -->
+    <div id="aboutRow" class="parallaxSection">
+      <div class="shadowSection">
+        <h2>簡報</h2>
+        <hr />
+      </div>
+    </div>
+    <div id="serviceBlocks" class="row">
+      <div class="container">
+        <div class="serviceBlock col-md-4">
+          <h1>PPT</h1>
+          <a href="https://www.microsoft.com/zh-tw/microsoft-365/powerpoint"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_PowerPoint_%282019%E2%80%93present%29.svg.png?20210821050414" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+        <div class="serviceBlock col-md-4">
+          <h1>Slidesgo</h1>
+          <a href="https://slidesgo.com/"><img src="https://pbs.twimg.com/profile_images/1485626069579444225/OSyoCovB_400x400.png" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+        <div class="serviceBlock col-md-4">
+          <h1>Freepiker</h1>
+          <a href="https://www.freepiker.com/"><img src="https://pbs.twimg.com/profile_images/796610179001249792/ip1fNAHx_400x400.jpg" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+      </div>
+    </div>
+    <div id="serviceBlocks" class="row">
+      <div class="container">
+        <div class="serviceBlock col-md-4">
+          <h1>SlidesCarnival</h1>
+          <a href="https://www.slidescarnival.com/"><img src="https://www.saashub.com/images/app/service_logos/68/bd4e9996ac82/large.png?1639986320" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+        <div class="serviceBlock col-md-4">
+          <h1>Canva</h1>
+          <a href="https://www.canva.com/zh_tw/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/2048px-Canva_icon_2021.svg.png" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+      </div>
+    </div>
+    <!-- 專注力 -->
+    <div id="servicesRow" class="parallaxSection">
+      <div class="shadowSection">
+        <h2>專注力</h2>
+        <hr />
+      </div>
+    </div>
+    <div id="serviceBlocks" class="row">
+      <div class="container">
+        <div class="serviceBlock col-md-4">
+          <h1>Forest</h1>
+          <a href="https://chrome.google.com/webstore/detail/forest-stay-focused-be-pr/kjacjjdnoddnpbbcjilcajfhhbdhkpgk?hl=zh-TW"><img src="https://play-lh.googleusercontent.com/CwErLSOHWWKWrstmM_o_5TqhTssP9fjcjm08A3zG99UjR_6JOEjtdwgFjn6LRlS5QP8" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+        <div class="serviceBlock col-md-4">
+          <h1>Flora</h1>
+          <a href="https://flora.appfinca.com/zh-tw/"><img src="https://media.istockphoto.com/id/1284204614/vector/flora-logo-with-plant-and-green-text-on-a-white-background-element-of-environmental.jpg?s=170667a&w=0&k=20&c=xYmM7ChphtRH6ujlFXumxoHB7xFrSqGMFbgrGXGkMMM=" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+        <div class="serviceBlock col-md-4">
+          <h1>SleepTown</h1>
+          <a href="https://play.google.com/store/apps/details?id=seekrtech.sleep&hl=zh_TW&gl=US&pli=1"><img src="https://play-lh.googleusercontent.com/UpxhlHCtJUonFpI2qKpZwPO4G9KGMzXOI5quN5MHXQx9Rw4YyX_uNcXBuuqXk_aUFgmu" /></a>
+          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+        </div>
+      </div>
+      <div id="serviceBlocks" class="row">
+        <div class="container">
+          <div class="serviceBlock col-md-4">
+            <h1>Habitica</h1>
+            <a href="https://habitica.com/static/home"><img src="https://pbs.twimg.com/profile_images/892167846603640832/8Iw213tT_400x400.jpg" /></a>
+            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+          </div>
+          <div class="serviceBlock col-md-4">
+            <h1>Any.Do</h1>
+            <img src="https://www.any.do/images/logo.png" />
+            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+          </div>
+        </div>
+        <!-- 日曆 -->
+        <div id="phoneDay" class="parallaxSection">
+          <div class="shadowSection">
+            <h2>日曆</h2>
+            <hr />
+          </div>
+        </div>
+        <div id="serviceBlocks" class="row">
+          <div class="container">
+            <div class="serviceBlock col-md-4">
+              <h1>TimeTree</h1>
+              <img src="https://timetreeapp.com/intl/static/eeaf5bd2185725195fb41e2d34a4bf79/ccc41/appicon.png" />
+              <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+            </div>
+            <div class="serviceBlock col-md-4">
+              <h1>TickTick</h1>
+              <img src="https://play-lh.googleusercontent.com/JkYolPNuRAlrXEI9vlk-XOid3VFJ0IPjDj2eM_xrriuE3Zu8IX9cuMkI7JOTw1upNxbW" />
+              <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+            </div>
+            <div class="serviceBlock col-md-4">
+              <h1>Google 日曆</h1>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/2048px-Google_Calendar_icon_%282020%29.svg.png" />
+              <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+            </div>
+          </div>
+          <div id="serviceBlocks" class="row">
+            <div class="container">
+              <div class="serviceBlock col-md-4">
+                <h1>Todoist</h1>
+                <a href="https://todoist.com/zh-TW"><img src="https://ericsammons.com/wp-content/uploads/2021/02/todoist-logo.png" /></a>
+                <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+              </div>
+              <div class="serviceBlock col-md-4">
+                <h1>naver</h1>
+                <a href="https://www.naver.com/"><img src="https://www.kickads.co/wp-content/uploads/2021/03/in36bktetqoapibgeabo.png" /></a>
+                <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+              </div>
+            </div>
 
-            function minus(){
-                var a=parseInt(document.getElementById('a').value)
-                var b=parseInt(document.getElementById('b').value)
-                document.getElementById('c').value=a-b
-            }
+            <!-- 筆記 -->
+            <div id="phonewrite" class="parallaxSection">
+              <div class="shadowSection">
+                <h2>筆記</h2>
+                <hr />
+              </div>
+            </div>
+            <div id="serviceBlocks" class="row">
+              <div class="container">
+                <div class="serviceBlock col-md-4">
+                  <h1>Goodnotes</h1>
+                  <a href="https://www.goodnotes.com/zh-hk"><img src="https://theme.zdassets.com/theme_assets/253475/94d803231c2daf3ecfd97ec7351002e55671b46b.png" /></a>
+                  <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                </div>
+                <div class="serviceBlock col-md-4">
+                  <h1>Notability</h1>
+                  <a href="https://notability.com/zh-Hans"><img src="https://mma.prnewswire.com/media/1674635/NotabilityLogo.jpg" /></a>
+                  <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                </div>
+                <div class="serviceBlock col-md-4">
+                  <h1>隨手寫</h1>
+                  <a href="https://www.fiinote.com/#/"><img src="https://pp.myapp.com/ma_icon/0/icon_10085479_1670490305/256" /></a>
+                  <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                </div>
+              </div>
+              <div id="serviceBlocks" class="row">
+                <div class="container">
+                  <div class="serviceBlock col-md-4">
+                    <h1>Onenote</h1>
+                    <a href="https://www.microsoft.com/zh-tw/microsoft-365/onenote/digital-note-taking-app"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Microsoft_Office_OneNote_%282019%E2%80%93present%29.svg/2203px-Microsoft_Office_OneNote_%282019%E2%80%93present%29.svg.png" /></a>
+                    <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                  </div>
+                  <div class="serviceBlock col-md-4">
+                    <h1>CollaNote</h1>
+                    <a href="https://windowsden.uk/1540956268/collanote-note-journal-pdf"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/LogoCollaNote.jpg/1200px-LogoCollaNote.jpg" /></a>
+                    <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                  </div>
+                </div>
 
-            function mutiple(){
-                var a=parseInt(document.getElementById('a').value)
-                var b=parseInt(document.getElementById('b').value)
-                document.getElementById('c').value=a*b
-            }
+                <!-- 單字 -->
+                <div id="phoneread" class="parallaxSection">
+                  <div class="shadowSection">
+                    <h2>背單字</h2>
+                    <hr />
+                  </div>
+                </div>
+                <div id="serviceBlocks" class="row">
+                  <div class="container">
+                    <div class="serviceBlock col-md-4">
+                      <h1>Quizlet</h1>
+                      <a href="https://quizlet.com/zh-tw"><img src="https://blog.studentlifenetwork.com/wp-content/uploads/2018/04/AppLogo-Quizlet.png" /></a>
+                      <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                    </div>
+                    <div class="serviceBlock col-md-4">
+                      <h1>Word up</h1>
+                      <a href="https://about.wordup.com.tw/"><img src="https://play-lh.googleusercontent.com/7n3PzzLKmdfOWPLTTAPtd6q9r_9FSKuGa-Zu61tosmmltx48BaeT0586Vv88T71o5JU" /></a>
+                      <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                    </div>
+                    <div class="serviceBlock col-md-4">
+                      <h1>單字樹</h1>
+                      <a href="https://play.google.com/store/apps/details?id=com.ou.wordtree&hl=zh_TW&gl=US"><img src="english.jpg" /></a>
+                      <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                    </div>
+                  </div>
+                  <div id="serviceBlocks" class="row">
+                    <div class="container">
+                      <div class="serviceBlock col-md-4">
+                        <h1>超級單字王</h1>
+                        <a href="https://superwordking.wixsite.com/home"><img src="https://briian.com/wp-content/uploads/2016/03/engapp_0.png" /></a>
+                        <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                      </div>
+                      <div class="serviceBlock col-md-4">
+                        <h1>E4F字根首字尾字典</h1>
+                        <a href="https://tw.wordbranch.com/"><img src="https://s3-ap-northeast-1.amazonaws.com/static.engintl/logo.jpg" /></a>
+                        <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                      </div>
+                    </div>
 
-            function divide(){
-                var a=parseInt(document.getElementById('a').value)
-                var b=parseInt(document.getElementById('b').value)
-                document.getElementById('c').value=a/b
-            }
-        </script>
-    </body>
+                    <!-- 資料處理 -->
+                    <div id="phoneexpert" class="parallaxSection">
+                      <div class="shadowSection">
+                        <h2>資料處理</h2>
+                        <hr />
+                      </div>
+                    </div>
+                    <div id="serviceBlocks" class="row">
+                      <div class="container">
+                        <div class="serviceBlock col-md-4">
+                          <h1>PDF expert</h1>
+                          <a href="https://pdfexpert.com/?irclickid=RFUVgsWj4xyNTMVVwaUXBVHEUkA3gsSfQysV2I0&irgwc=1&irpid=2924498&utm_source=ImpactRadius&utm_medium=affiliate&utm_campaign=kevinhuang8656"><img src="https://play-lh.googleusercontent.com/DxhcuRkl3295Lsna17kFLCsb1_2Is5TpbBAfVCKqed5to5rAoWDhr-LGPRD9QAJQsg" /></a>
+                          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                        </div>
+                        <div class="serviceBlock col-md-4">
+                          <h1>Adobe Acrobat</h1>
+                          <a href="https://www.adobe.com › acroba"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/2048px-Adobe_Acrobat_DC_logo_2020.svg.png" /></a>
+                          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                        </div>
+                        <div class="serviceBlock col-md-4">
+                          <h1>Adobe Scan</h1>
+                          <a href="https://www.adobe.com/tw/acrobat/mobile/scanner-app.html"><img src="https://img.utdstc.com/icon/fa8/a9a/fa8a9ab1abdd75706333a74197c209fad6dc14b818f0294cece4abf14444369d:200" /></a>
+                          <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                        </div>
+                      </div>
+                      <div id="serviceBlocks" class="row">
+                        <div class="container">
+                          <div class="serviceBlock col-md-4">
+                            <h1>Send Anywhere</h1>
+                            <a href="https://play.google.com/store/apps/details?id=com.estmob.android.sendanywhere&hl=zh_TW&gl=US"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Send_Anywhere_Logo.png" /></a>
+                            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                          </div>
+                        </div>
+                      <!-- 閱讀 -->
+                      <div id="phonebooks" class="parallaxSection">
+                        <div class="shadowSection">
+                          <h2>閱讀</h2>
+                          <hr />
+                        </div>
+                      </div>
+                      <div id="serviceBlocks" class="row">
+                        <div class="container">
+                          <div class="serviceBlock col-md-4">
+                            <h1>Kobo Books</h1>
+                            <a href="https://www.kobo.com/tw/zh"><img src="https://help.kobo.com/hc/article_attachments/360025749254/image-0.png" /></a>
+                            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                          </div>
+                          <div class="serviceBlock col-md-4">
+                            <h1>Readmoo</h1>
+                            <a href="https://readmoo.com"><img src="https://cdn.readmoo.com/images/store/logo_icon.png" /></a>
+                            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                          </div>
+                          <div class="serviceBlock col-md-4">
+                            <h1>Medium</h1>
+                            <a href="https://medium.com"><img src="https://cdn4.iconfinder.com/data/icons/social-media-circle-7/512/Medium_circle-512.png" /></a>
+                            <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                          </div>
+                        </div>
+                        <div id="serviceBlocks" class="row">
+                          <div class="container">
+                            <div class="serviceBlock col-md-4">
+                              <h1>Hyread</h1>
+                              <a href="https://ebook.hyread.com.tw"><img src="https://play-lh.googleusercontent.com/BX8F6sQD908U_ljAZNFnc9DhlzxzUkJbRmtHnWX3ki7YrZnaT1X6x3c9RKbIASEnEkTf" /></a>
+                              <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                            </div>
+                            <div class="serviceBlock col-md-4">
+                              <h1>Sparksine</h1>
+                              <a href="https://www.sparksine.com"><img src="data:image/png;base64,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" /></a>
+                              <!-- <p>We do things! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+                            </div>
+                          </div>
+<!--  Copyright    -->
+    <div id="copyright" class="row">
+      <div class="container">
+        <div id="socialBtn">
+            <a href="https://www.instagram.com/kui_12.25/"><img id="ig" class="social"></a><b>張育馗</b>
+            <a href="https://www.instagram.com/huang.tank/"><img id="ig" class="social"></a><b>黃昱懷</b>
+            <a href="https://www.instagram.com/xinyu3509/"><img id="ig" class="social"></a><b>xinyu3509</b>
+            <a href="https://www.instagram.com/shiu.0115/"><img id="ig" class="social"></a><b>詩育</b>
+        </div>
+        <p>&copy; 2017 Leying Studio. All rights reserved. Designed and created by Mitchell Console</p>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
 </html>
