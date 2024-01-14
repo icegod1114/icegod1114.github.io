@@ -1,20 +1,318 @@
 <!DOCTYPE html>
-<html lang="zh">
-    <head>
-        <meta charset="UTF-8">
-        <title>曜震的數學小天地</title>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小小的單字題庫</title>
+  <style>
+    #counter {
+        color: grey;
+        font-size: 1.2em; /* 調整按鈕、結果和計數器字體大小 */
+        margin-top: 10px; /* 調整按鈕、結果和計數器之間的間距 */
+      }
       
-    </head>
-    <body>
-        <script src="script.js"></script>
-        <h1>曜震的數學小天地</h1>
-        <form name='form' id='form'>
-            帳號：
-            <input type='text' name='acc1' id='acc1' /> 密碼：
-            <input type='text' name='pd1' id='pd1' />
-            <input type='button' name='submit' value='送出' onclick='processFormData();' />
-          </form>
-    </body>
+    * {
+        border-radius: 15px;
+    }
+    body {
+        background-color: rgb(45, 45, 45);
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #question-container {
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    #user-input {
+        background-color: rgb(35, 35, 35);
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    #next-button,
+    #check-button {
+        background-color: rgb(35, 35, 35);
+        color: white;
+        font-size: 1.5em;
+        margin: 0 auto;
+    }
+
+    #result {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    
+  <div id="question-container">
+    <div id="counter">當前題數: <span id="current-question">0</span> 答對題目數: <span id="correct-count">0</span> 答錯題目數: <span id="wrong-count">0</span> 正確率: <span id="accuracy">0%</span></div>
+    <h1 id="chinese-word"></h1>
+    <input type="text" id="user-input" placeholder="請輸入答案" onkeydown="checkOnEnter(event)">
+    <br>
+    <button id="check-button" onclick="checkAnswer()">檢查答案</button>
+    <h1 id="result"></h1>
+    <button id="next-button" style="display: none;" onclick="nextQuestion()">下一題</button>
+    
+  </div>
+
+  <script>
+    // 直接將 JSON 資料嵌入到 JavaScript 中
+    const jsonData = [
+    {
+     "English": "risk",
+     "Chinese": "n. 風險"
+    },
+    {
+     "English": "disappear",
+     "Chinese": "v. 消失"
+    },
+    {
+     "English": "completely",
+     "Chinese": "adv. 完全地"
+    },
+    {
+     "English": "creature",
+     "Chinese": "n. 生物"
+    },
+    {
+     "English": "stubborn",
+     "Chinese": "adj. 頑固的"
+    },
+    {
+     "English": "favor",
+     "Chinese": "v. 更喜愛"
+    },
+    {
+     "English": "bother",
+     "Chinese": "v. 使煩惱不安"
+    },
+    {
+     "English": "refuse",
+     "Chinese": "v. 拒絕"
+    },
+    {
+     "English": "mate",
+     "Chinese": "v. 交配"
+    },
+    {
+     "English": "put off",
+     "Chinese": "v. phr. 使反感"
+    },
+    {
+     "English": "sensitive",
+     "Chinese": "海拔高度"
+    },
+    {
+     "English": "contain",
+     "Chinese": "v. 包含"
+    },
+    {
+     "English": "information",
+     "Chinese": "n. 資訊"
+    },
+    {
+     "English": "communicate",
+     "Chinese": "v. 溝通交流"
+    },
+    {
+     "English": "activity",
+     "Chinese": "n. 活動"
+    },
+    {
+     "English": "disturb",
+     "Chinese": "v. 擾亂"
+    },
+    {
+     "English": "locate",
+     "Chinese": "v. 找到"
+    },
+    {
+     "English": "affect",
+     "Chinese": "v. 影響"
+    },
+    {
+     "English": "behavior",
+     "Chinese": "n. 行為"
+    },
+    {
+     "English": "perfume",
+     "Chinese": "香水"
+    },
+    {
+     "English": "develop",
+     "Chinese": "v. 使發展"
+    },
+    {
+     "English": "pleasant",
+     "Chinese": "adj. 令人愉悅的"
+    },
+    {
+     "English": "expand",
+     "Chinese": "v. 擴大"
+    },
+    {
+     "English": "possibility",
+     "Chinese": "n. 可能性"
+    },
+    {
+     "English": "entry",
+     "Chinese": "n. 進入權"
+    },
+    {
+     "English": "spray",
+     "Chinese": "v. 噴灑"
+    },
+    {
+     "English": "amount",
+     "Chinese": "n. 數量"
+    },
+    {
+     "English": "blend",
+     "Chinese": "v. 混合"
+    },
+    {
+     "English": "outcome",
+     "Chinese": "n. 結果"
+    },
+    {
+     "English": "concept",
+     "Chinese": "n. 觀念"
+    },
+    {
+     "English": "shift",
+     "Chinese": "n. 改變"
+    },
+    {
+     "English": "conventional",
+     "Chinese": "adj. 傳統上的"
+    },
+    {
+     "English": "overcome",
+     "Chinese": "v. 戰勝"
+    },
+    {
+     "English": "boldness",
+     "Chinese": "n. 勇敢"
+    },
+    {
+     "English": "favorable",
+     "Chinese": "adj. 贊成的"
+    },
+    {
+     "English": "review",
+     "Chinese": "n. 評價"
+    },
+    {
+     "English": "rumor",
+     "Chinese": "v. 謠傳"
+    },
+    {
+     "English": "deliver",
+     "Chinese": "v. 提供"
+    }
+   ];
+   let currentQuestion = 0;
+   let correctCount = 0;
+   let wrongCount = 0;
+   let currentIndex = getRandomIndex();
+
+   function getRandomIndex() {
+     return Math.floor(Math.random() * jsonData.length);
+   }
+
+   function getHint() {
+        let hint = "";
+        let engstring = jsonData[currentIndex].English.split(" ");
+        for (let i = 0; i < engstring.length; i++) {
+            if (engstring[i].length <= 1) {
+            } else if (engstring[i].length <= 3) {
+                hint = hint + "_ "
+            } else {
+                const word = engstring[i];
+                const firstLetter = word[0];
+                const lastLetter = word[word.length - 1];
+                
+                hint += `${firstLetter}_${lastLetter} `;
+            }
+
+
+          }
+
+        return hint;
+    }
+
+   function loadQuestion() {
+    currentQuestion++;
+    document.getElementById('current-question').textContent = currentQuestion;
+     const chineseWordElement = document.getElementById('chinese-word');
+     chineseWordElement.textContent = getHint() + " " + jsonData[currentIndex].Chinese;
+   }
+
+   function checkAnswer() {
+    const checkElement = document.getElementById('check-button');
+    checkElement.style.display = 'none';
+     const userInput = document.getElementById('user-input').value.toLowerCase();
+     const correctAnswer = jsonData[currentIndex].English.toLowerCase();
+     const resultElement = document.getElementById('result');
+
+     const nextButton = document.getElementById('next-button');
+
+     if (userInput.trim() == correctAnswer.trim()) {
+       resultElement.textContent = '正確！';
+       nextButton.style.display = 'block'; // 顯示下一題按鈕
+       correctCount++;
+        document.getElementById('correct-count').textContent = correctCount;
+     } else {
+       resultElement.textContent = '錯誤，正確答案是 : ' + correctAnswer;
+       
+       nextButton.style.display = 'block'; // 顯示下一題按鈕
+       wrongCount++;
+       document.getElementById('wrong-count').textContent = wrongCount;
+     }
+
+
+   }
+
+   function checkOnEnter(event) {
+    if (event.key === 'Enter') {
+        const nextButton = document.getElementById('next-button');
+      if (nextButton.style.display == 'block') {
+
+        nextQuestion();
+      } else {
+        checkAnswer();
+      }
+      
+    }
+  }
+
+   function nextQuestion() {
+    const nextButton = document.getElementById('next-button');
+    const resultElement = document.getElementById('result');
+    const checkElement = document.getElementById('check-button');
+    checkElement.style.display = 'block';
+    document.getElementById('user-input').value = '';
+    resultElement.textContent = '';
+    currentIndex = getRandomIndex();
+    nextButton.style.display = 'none'; 
+    loadQuestion();
+    document.getElementById('accuracy').textContent = (correctCount / (currentQuestion-1) * 100).toFixed(1) + "%"
+
+  }
+   loadQuestion();
+  </script>
+</body>
 </html>
